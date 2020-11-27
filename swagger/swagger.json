@@ -1,0 +1,16 @@
+{
+  "info": {
+    "title": "Pankod MoleculerJS Boilerplate",
+    "version": "1.0.0",
+    "description": "Moleculer JS Microservice Boilerplate with Typescript, TypeORM, CLI, Service Clients, Swagger, Jest, Docker, Eslint support and everything you will ever need to deploy rock solid projects.."
+  },
+  "host": "localhost:3000",
+  "basePath": "/api",
+  "swagger": "2.0",
+  "paths": {},
+  "definitions": {},
+  "responses": {},
+  "parameters": {},
+  "securityDefinitions": {},
+  "tags": []
+}

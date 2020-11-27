@@ -1,0 +1,55 @@
+{
+	"Print to console": {
+		"scope": "javascript,typescript",
+		"prefix": "schema",
+		"body": [
+			"import { Entity, getSchema, Timestamp } from '@Helpers/mongoose/schema';",
+			"import { Schema } from 'mongoose';",
+			"",
+			"@Entity()",
+			"export class $1 implements Timestamp {",
+			"\t// Timestamp",
+			"\tcreatedAt!: string | Date;",
+			"\tupdatedAt!: string | Date;",
+			"}",
+			"",
+			"export const $1Schema = new Schema<$1>(getSchema($1));"
+		],
+		"description": "Log output to console"
+	},
+	"service": {
+		"scope": "typescript",
+		"prefix": "service",
+		"body": [
+			"import { Service } from '@Helpers/moleculer/decorator';",
+			"import { MoleculerService } from '@Helpers/moleculer/MoleculerService';",
+			"",
+			"@Service({",
+			"\tname: '${2:name}',",
+			"\tmixins: [],",
+			"})",
+			"class $1Service extends MoleculerService {}",
+			"",
+			"export default $1Service;"
+		]
+	},
+	"model": {
+		"scope": "typescript",
+		"prefix": "model",
+		"body": [
+			"import { MongoModel, Inject } from '@Helpers/mongoose/model';",
+			"import { $1, $1Schema } from '$2';",
+			"",
+			"@Inject({",
+			"\tname: '$1',",
+			"\tschema: $1Schema,",
+			"})",
+			"export class $1Model extends MongoModel<$1> {}"
+		]
+	},
+	"column": {
+		"scope": "typescript",
+		"prefix": "column",
+		"body": ["@Column({ type: ${3:String} })", "$1: ${2:string};"]
+	}
+}
